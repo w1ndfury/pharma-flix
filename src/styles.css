@@ -9,7 +9,7 @@ body {
 }
 
 app-root {
-  display: block; /* Add this line */
+  display: block;
   margin: 0px;
   height: 400px;
   width: 100%;
