@@ -1,0 +1,22 @@
+.movies-wrapper,
+.movies-table {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.movies-wrapper,
+.movies-table {
+  @media only screen and (max-width: 512px) {
+    display: block;
+  }
+}
+
+.movie-row {
+  cursor: pointer;
+}
+
+.movie-row:hover {
+  background-color: beige;
+  color: black;
+}

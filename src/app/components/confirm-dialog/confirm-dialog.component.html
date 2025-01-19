@@ -1,0 +1,20 @@
+<p>{{ message }}</p>
+<div class="confirm-dialog-button-container">
+  <p-button
+    pRipple
+    label="Close"
+    variant="text"
+    severity="danger"
+    (click)="closeDialog()"
+    size="small"
+  >
+  </p-button
+  ><p-button
+    pRipple
+    [label]="confirmButtonLabel"
+    severity="success"
+    (click)="onConfirm()"
+    size="small"
+  >
+  </p-button>
+</div>

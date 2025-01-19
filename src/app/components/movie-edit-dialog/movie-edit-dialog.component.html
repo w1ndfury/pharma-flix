@@ -1,0 +1,38 @@
+<div class="movie-edit-dialog-wrapper">
+  <div class="movie-edit-dialog-field">
+    <label for="title">Title</label>
+    <input id="title" type="text" pInputText [(ngModel)]="movie.title" />
+  </div>
+  <div class="movie-edit-dialog-field">
+    <label for="genre">Gerne</label>
+    <input id="genre" type="text" pInputText [(ngModel)]="movie.genre" />
+  </div>
+  <div class="movie-edit-dialog-field">
+    <label for="director">Director</label>
+    <input id="director" type="text" pInputText [(ngModel)]="movie.director" />
+  </div>
+  <div class="movie-edit-dialog-field">
+    <label for="year">Release year</label>
+    <input id="year" type="number" pInputText [(ngModel)]="movie.releaseYear" />
+  </div>
+  <div class="movie-edit-dialog-field">
+    <label for="summary">Summary</label>
+    <textarea
+      id="summary"
+      rows="5"
+      cols="30"
+      pTextarea
+      [autoResize]="false"
+      [(ngModel)]="movie.summary"
+    ></textarea>
+  </div>
+  <div class="movie-edit-dialog-buttons-container">
+    <p-button
+      label="Cancel"
+      (click)="onCancel()"
+      variant="text"
+      severity="secondary"
+    />
+    <p-button label="Save" (click)="onSave()" severity="success" />
+  </div>
+</div>

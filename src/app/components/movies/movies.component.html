@@ -1,0 +1,76 @@
+<section class="movies-wrapper">
+  <p-table
+    #dt2
+    [columns]="cols"
+    [value]="movies"
+    [scrollable]="true"
+    showGridlines
+    [tableStyle]="{ 'max-width': '40rem' }"
+    class="movies-table"
+    selectionMode="single"
+    dataKey="id"
+    [globalFilterFields]="[
+      'id',
+      'title',
+      'genre',
+      'releaseYear',
+      'rating',
+      'director',
+      'language',
+      'summary'
+    ]"
+    (onRowSelect)="handleSelect($event)"
+  >
+    <ng-template #caption>
+      <input
+        pInputText
+        type="text"
+        (input)="dt2.filterGlobal($any($event.target).value, 'contains')"
+        placeholder="Search keyword"
+      />
+    </ng-template>
+    <ng-template #header let-columns>
+      <tr>
+        <th *ngFor="let col of columns" style="width: 20%">
+          {{ col.header }}
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template #body let-movie>
+      <tr style="height: 46px" class="movie-row" [pSelectableRow]="movie">
+        <td>{{ movie.id }}</td>
+        <td>{{ movie.title }}</td>
+        <td>{{ movie.genre }}</td>
+        <td>{{ movie.releaseYear }}</td>
+        <td>{{ movie.rating }}</td>
+        <td>
+          <p-button
+            pRipple
+            variant="text"
+            severity="info"
+            (click)="onMovieEdit(movie)"
+            size="small"
+          >
+            <i class="pi pi-pencil"></i>
+          </p-button>
+        </td>
+        <td>
+          <p-button
+            pRipple
+            variant="text"
+            severity="danger"
+            (click)="onMovieDelete(movie)"
+            size="small"
+          >
+            <i class="pi pi-trash"></i>
+          </p-button>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template #emptymessage>
+      <tr>
+        <td colspan="7">No movies found.</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</section>

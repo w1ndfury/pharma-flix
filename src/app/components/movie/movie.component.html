@@ -1,0 +1,33 @@
+<section class="movie-wrapper">
+  <p-button
+    label="Back"
+    severity="secondary"
+    [outlined]="true"
+    (click)="onBackClick()"
+  />
+  <p-card *ngIf="movie" [header]="movie.title" class="movie-card">
+    <div class="movie-card-container">
+      <p-image
+        *ngIf="movie.image"
+        [src]="movie.image"
+        alt="Image"
+        width="250"
+      />
+      <div class="movie-card-info">
+        <div class="movie-card-subtitle">
+          <span *ngIf="movie.releaseYear">{{ movie.releaseYear }}</span>
+          <span *ngIf="movie.duration">{{ movie.duration }}</span>
+          <span *ngIf="movie.language"> {{ movie.language }}</span>
+          <div *ngIf="movie.rating" class="movie-card-rating">
+            <i class="movie-card-rating-icon" class="pi pi-star-fill"></i>
+            <span>{{ movie.rating }} </span>
+          </div>
+        </div>
+        <div class="movie-card-extra-info">
+          <p>{{ movie.summary }}</p>
+          <p>Director: {{ movie.director }}</p>
+        </div>
+      </div>
+    </div>
+  </p-card>
+</section>
