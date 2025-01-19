@@ -34,7 +34,7 @@ export class MovieService {
     );
   }
 
-  public fetchMovie$(id: number): Observable<Movie> {
+  public fetchMovie$(id: string): Observable<Movie> {
     return this.http.get<Movie>(`${this.url}/${id}`).pipe(
       tap((res: Movie) => {
         const movie = normalizeMovie(res);
@@ -43,7 +43,7 @@ export class MovieService {
     );
   }
 
-  public deleteMovie$(id: number): Observable<Movie> {
+  public deleteMovie$(id: string): Observable<Movie> {
     return this.http.delete<Movie>(`${this.url}/${id}`);
   }
 

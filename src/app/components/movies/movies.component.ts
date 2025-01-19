@@ -155,7 +155,7 @@ export class MoviesComponent {
     this.openMovieDeleteConfirmDialog(movie);
   }
 
-  public deleteMovie(id: number): void {
+  public deleteMovie(id: string): void {
     this.movieService.deleteMovie$(id).subscribe({
       next: (res: Movie) => {
         const movies = this.movieService

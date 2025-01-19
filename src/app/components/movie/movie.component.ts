@@ -38,7 +38,7 @@ export class MovieComponent {
   }
 
   private fetchMovie(): void {
-    const movieId = Number(this.route.snapshot.paramMap.get('id'));
+    const movieId = String(this.route.snapshot.paramMap.get('id'));
     this.movieService.fetchMovie$(movieId).subscribe({
       next: (res: Movie) => {
         this.movie = res;
