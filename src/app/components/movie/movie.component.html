@@ -5,7 +5,7 @@
     [outlined]="true"
     (click)="onBackClick()"
   />
-  <p-card *ngIf="movie" [header]="movie.title" class="movie-card">
+  <p-card *ngIf="movie" [header]="title" class="movie-card">
     <div class="movie-card-container">
       <p-image
         *ngIf="movie.image"
@@ -15,12 +15,11 @@
       />
       <div class="movie-card-info">
         <div class="movie-card-subtitle">
-          <span *ngIf="movie.releaseYear">{{ movie.releaseYear }}</span>
-          <span *ngIf="movie.duration">{{ movie.duration }}</span>
-          <span *ngIf="movie.language"> {{ movie.language }}</span>
+          <li *ngIf="movie.duration">{{ movie.duration }}</li>
+          <li *ngIf="movie.language">{{ movie.language }}</li>
           <div *ngIf="movie.rating" class="movie-card-rating">
+            <li>{{ movie.rating }}</li>
             <i class="movie-card-rating-icon" class="pi pi-star-fill"></i>
-            <span>{{ movie.rating }} </span>
           </div>
         </div>
         <div class="movie-card-extra-info">

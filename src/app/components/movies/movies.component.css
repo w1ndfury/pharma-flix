@@ -5,18 +5,17 @@
   justify-content: center;
 }
 
-.movies-wrapper,
-.movies-table {
-  @media only screen and (max-width: 512px) {
-    display: block;
-  }
-}
-
 .movie-row {
   cursor: pointer;
 }
 
 .movie-row:hover {
-  background-color: beige;
-  color: black;
+  background-color: rgb(110, 110, 110);
+}
+
+@media only screen and (max-width: 512px) {
+  .movies-wrapper,
+  .movies-table {
+    display: block;
+  }
 }

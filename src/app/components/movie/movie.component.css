@@ -22,11 +22,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  @media only screen and (max-width: 512px) {
-    flex-direction: column;
-    gap: 1rem;
-  }
 }
 
 .movie-card-subtitle {
@@ -35,11 +30,6 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 0.5rem;
-
-  @media only screen and (max-width: 512px) {
-    flex-direction: column;
-    gap: 1rem;
-  }
 }
 
 .pi-star-fill:before {
@@ -60,4 +50,21 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+}
+
+@media only screen and (max-width: 512px) {
+  .movie-card-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .movie-card-subtitle {
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .movie-card-subtitle li {
+    list-style: none;
+  }
 }

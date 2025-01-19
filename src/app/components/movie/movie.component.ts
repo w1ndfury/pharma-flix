@@ -21,6 +21,7 @@ const GET_ERROR_MESSAGE = 'Failed to load movie. Please try again later.';
 export class MovieComponent {
   public movie!: Movie;
   public ref: DynamicDialogRef | undefined;
+  public title: string = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -42,6 +43,9 @@ export class MovieComponent {
     this.movieService.fetchMovie$(movieId).subscribe({
       next: (res: Movie) => {
         this.movie = res;
+        this.title = res.releaseYear
+          ? `${this.movie.title} (${String(this.movie.releaseYear)})`
+          : `${this.movie.title}`;
       },
       error: (err) => {
         this.showErrorDialog(GET_ERROR_MESSAGE);
