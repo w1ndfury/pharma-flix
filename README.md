@@ -27,5 +27,5 @@ Once the server is running, open your browser and navigate to `http://localhost:
 To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
 
 ```bash
-ng test
+npm test
 ```
